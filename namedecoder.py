@@ -50,12 +50,15 @@ class Solution:
         elif len(result)==2:
             id = ""
             name = ""
-            for i in result[1][-1:]:
-                if ord("0")<=ord(result[1][i])<=ord("9"): 
-                    id += result[1][i]
+            for i in range(len(result[1])):
+                # print(result[1][-1:0:-1])
+                # print(111)
+                # print(result[1][-1:0:-1][i])
+                if ord("0")<=ord(result[1][::-1][i])<=ord("9"): 
+                    id += result[1][-1:0:-1][i]
                 else:
                     name = result[1][0:len(result[1])-i]
-                    return "First name = {0}, Last name = {1}, id = {2}".format(result[0], name, id)
+                    return "First name = {0}, Last name = {1}, id = {2}".format(result[0], name, id[::-1])
 
 
                     
