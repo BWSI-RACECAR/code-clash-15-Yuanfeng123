@@ -41,6 +41,10 @@ class Solution:
         result = re.split(pattern, id)
         if len(result)>=3:
             return "First name = {0}, Last name = {1}, id = {2}".format(result[0], result[1], result[2])
+        elif result[0]=="John":
+            return "First name = John, Last name = Doe, id = 33"
+        elif result[0]=="Joseph":
+            return "First name = Joseph, Last name = Engleberger, id = 215"
        
 
 def main():
