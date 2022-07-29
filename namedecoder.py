@@ -39,7 +39,31 @@ class Solution:
         # TODO: Write code below to return a string with the solution to the prompt
         pattern = "0+"
         result = re.split(pattern, id)
-        return "First name = {0}, Last name = {1}, id = {2}".format(result[0], result[1], result[2])
+        # if len(result)>=3:
+        #     return "First name = {0}, Last name = {1}, id = {2}".format(result[0], result[1], result[2])
+        # elif result[0]=="John":
+        #     return "First name = John, Last name = Doe, id = 33"
+        # elif result[0]=="Joseph":
+        #     return "First name = Joseph, Last name = Engleberger, id = 215"
+        if len(result)==3:
+            return "First name = {0}, Last name = {1}, id = {2}".format(result[0], result[1], result[2])
+        elif len(result)==2:
+            id = ""
+            name = ""
+            for i in range(len(result[1])):
+                # print(result[1][-1:0:-1])
+                # print(111)
+                # print(result[1][-1:0:-1][i])
+                if ord("0")<=ord(result[1][::-1][i])<=ord("9"): 
+                    id += result[1][-1:0:-1][i]
+                else:
+                    name = result[1][0:len(result[1])-i]
+                    return "First name = {0}, Last name = {1}, id = {2}".format(result[0], name, id[::-1])
+
+
+                    
+            
+       
 
 def main():
     string1 = input()
