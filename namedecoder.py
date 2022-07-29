@@ -39,7 +39,9 @@ class Solution:
         # TODO: Write code below to return a string with the solution to the prompt
         pattern = "0+"
         result = re.split(pattern, id)
-        return "First name = {0}, Last name = {1}, id = {2}".format(result[0], result[1], result[2])
+        if len(result)>=3:
+            return "First name = {0}, Last name = {1}, id = {2}".format(result[0], result[1], result[2])
+        if result
 
 def main():
     string1 = input()
