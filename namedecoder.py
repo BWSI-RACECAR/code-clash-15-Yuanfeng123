@@ -41,7 +41,7 @@ class Solution:
         result = re.split(pattern, id)
         if len(result)>=3:
             return "First name = {0}, Last name = {1}, id = {2}".format(result[0], result[1], result[2])
-        if result
+       
 
 def main():
     string1 = input()
