@@ -45,12 +45,21 @@ class Solution:
         #     return "First name = John, Last name = Doe, id = 33"
         # elif result[0]=="Joseph":
         #     return "First name = Joseph, Last name = Engleberger, id = 215"
-        if len(result)>=3:
+        if len(result)==3:
             return "First name = {0}, Last name = {1}, id = {2}".format(result[0], result[1], result[2])
-        elif result[0]=="John":
-            return result
-        elif result[0]=="Joseph":
-            return result
+        elif len(result)==2:
+            id = ""
+            name = ""
+            for i in result[1][-1:]:
+                if ord("0")<=ord(result[1][i])<=ord("9"): 
+                    id += result[1][i]
+                else:
+                    name = result[1][0:len(result[1])-i]
+                    return "First name = {0}, Last name = {1}, id = {2}".format(result[0], name, id)
+
+
+                    
+            
        
 
 def main():
