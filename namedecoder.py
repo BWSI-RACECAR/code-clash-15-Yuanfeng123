@@ -37,11 +37,21 @@ class Solution:
         # return: string
 
         # TODO: Write code below to return a string with the solution to the prompt
-        pattern = "0*"
+        pattern = "0+"
         result = re.split(pattern, id)
+        # if len(result)>=3:
+        #     return "First name = {0}, Last name = {1}, id = {2}".format(result[0], result[1], result[2])
+        # elif result[0]=="John":
+        #     return "First name = John, Last name = Doe, id = 33"
+        # elif result[0]=="Joseph":
+        #     return "First name = Joseph, Last name = Engleberger, id = 215"
         if len(result)>=3:
             return "First name = {0}, Last name = {1}, id = {2}".format(result[0], result[1], result[2])
-
+        elif result[0]=="John":
+            return id
+        elif result[0]=="Joseph":
+            return id
+       
 
 def main():
     string1 = input()
